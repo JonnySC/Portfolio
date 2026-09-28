@@ -1,219 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="description" content="Portafolio de Jonathan Salas, consultor IT e ingeniero de IA y Cloud especializado en Azure, agentes y LLMs.">
+    <title>Jonathan Salas | AI & Cloud Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 </head>
 <body>
-    <div class="scroll-up-btn">
-        <i class="fas fa-angle-up"></i>
-    </div>
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="logo"><a href="#">Portafo<span>lio.</span></a></div>
-           
-        </div>
-    </nav>
-   
-    <canvas id="canvas"></canvas>
-    <section class="home" id="home">
-        <div class="max-width">
-            <div class="home-content">
-                <div class="text-1">Hola, mi nombre es</div>
-                <div class="text-2">Jonathan Salas</div>
-                <div class="text-3">Y soy <span class="typing"></span></div>
-                
+    <canvas id="canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navegacion principal">
+            <a class="logo" href="#inicio" aria-label="Jonathan Salas, inicio">JS<span>.</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Abrir menu">
+                <span></span><span></span>
+            </button>
+            <div class="nav-links" id="site-menu">
+                <a href="#sobre-mi">Sobre mi</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#experiencia">Experiencia</a>
+                <a href="#habilidades">Stack</a>
+                <a class="nav-cta" href="https://mx.linkedin.com/in/jonathan-salas-c" target="_blank" rel="noopener noreferrer">Hablemos <span aria-hidden="true">↗</span></a>
             </div>
-        </div>
-    </section>
-    <div class="about">
-        <div class="card">
-            <div class="card-photo"></div>
-            <div class="card-title">Jonathan Salas <br>
-                <span>Software Engineer </span>
-            </div>
-            <div class="card-socials">
-               <a href="https://github.com/JonnySC" target="_blank">
-                <button class="card-socials-btn github">
-                    <svg viewBox="0 0 24 24" height="33" width="33" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
-                </button>
-                </a>
-                <a href="https://www.linkedin.com/in/jonathan-salas-c/" target="_blank">
-                <button class="card-socials-btn linkedin">
-                    <svg height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m51.326 185.85h90.011v270.872h-90.011zm45.608-130.572c-30.807 0-50.934 20.225-50.934 46.771 0 26 19.538 46.813 49.756 46.813h.574c31.396 0 50.948-20.814 50.948-46.813-.589-26.546-19.551-46.771-50.344-46.771zm265.405 124.209c-47.779 0-69.184 26.28-81.125 44.71v-38.347h-90.038c1.192 25.411 0 270.872 0 270.872h90.038v-151.274c0-8.102.589-16.174 2.958-21.978 6.519-16.174 21.333-32.923 46.182-32.923 32.602 0 45.622 24.851 45.622 61.248v144.926h90.024v-155.323c0-83.199-44.402-121.911-103.661-121.911z"></path></svg>
-                </button>
-            </a>
-            </div>
-        </div>
-    </div>
-    
-    <section class="about" id="about">
-        <div class="max-width">
-            
-            <div class="about-content">
-                <div class="typing-2-container">
-                    <span class="typing-2"></span>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container" id="inicio">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot"></span> AI & Cloud Engineer · Ciudad de México</p>
+                <h1>Construyo soluciones empresariales <em>con IA.</em></h1>
+                <p class="hero-text">Soy Jonathan Salas, consultor IT especializado en Microsoft Azure, inteligencia artificial generativa, agentes, LLMs y arquitecturas para entornos corporativos.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#proyectos">Ver proyectos <span aria-hidden="true">↓</span></a>
+                    <a class="button button-ghost" href="https://mx.linkedin.com/in/jonathan-salas-c" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
                 </div>
             </div>
-        </div>
-    </section>
-    <div class="loader-container">
-        <div class="loader">
-          <div class="glitch">
-            <span data-glitch="Proyectos">Proyectos</span>
-          </div>
-        </div>
-      </div>
-      
-    <section class="proyects" id="proyects">
-        <div class="max-width">
-            <div class="card-container">
-            <div class="cardp">
-                <div class="main-content">
-                  <div class="header">
-                <span>Sistema Experto</span>
-                <span>(Desarrollo)</span>
-              </div>
-              <p class="heading">Chatbot de consulta</p>
-              <div class="categories">
-                <span>Html</span>
-                <span>Css</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-              </div>
+            <div class="hero-art" aria-label="Perfil de Jonathan Salas">
+                <div class="art-grid"></div>
+                <div class="art-orbit orbit-one"></div>
+                <div class="art-orbit orbit-two"></div>
+                <div class="art-card">
+                    <div class="art-card-top"><span>01 / 04</span><span>AI & Cloud Engineer</span></div>
+                    <div class="avatar">JS</div>
+                    <p>Ideas que se convierten en interfaces y productos.</p>
+                    <div class="art-card-bottom"><span>Jonathan Salas</span><span>Azure · AI · Cloud</span></div>
                 </div>
-              <div class="footer">
-                <a href="https://github.com/JonnySC/chatbot-v1">
-                <button class="button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="white"></path>
-                    </svg>
-                    <p class="text">Ir al repo</p>
-                  </button>
-                </a>
-              </div>
-              </div>
+            </div>
+        </section>
 
-              <div class="cardp">
-                <div class="main-content">
-                  <div class="header">
-                <span>Sitio web estatico</span>
-                <span>(Desarrollo)</span>
-              </div>
-              <p class="heading">Portafolio de proyectos</p>
-              <div class="categories">
-                <span>Html</span>
-                <span>Css</span>
-                <span>JavaScript</span>
-              </div>
+        <section class="section container about-section" id="sobre-mi">
+            <div class="section-heading">
+                <p class="eyebrow">01 / Sobre mi</p>
+                <h2>Conecto cloud, datos e inteligencia artificial.</h2>
+            </div>
+            <div class="about-grid">
+                <p class="lead">Ingeniero de software enfocado en Cloud e Inteligencia Artificial, con experiencia construyendo soluciones empresariales sobre Microsoft Azure.</p>
+                <div class="about-copy">
+                    <p>Me interesa convertir problemas reales de negocio en soluciones escalables, integrando cloud, datos, automatización, IA generativa y buenas prácticas de ingeniería. También comparto contenido sobre IA y desarrollo de software.</p>
+                    <a class="text-link" href="https://github.com/JonnySC" target="_blank" rel="noopener noreferrer">Conoce mi GitHub <span aria-hidden="true">↗</span></a>
                 </div>
-              <div class="footer">
-                <a href="https://github.com/JonnySC/Portfolio">
-                <button class="button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="white"></path>
-                    </svg>
-                    <p class="text">Ir al repo</p>
-                  </button>
-                </a><br>
-                <a href="https://jonnysc.github.io/Portfolio/">
-                    <button class="button">
-                        <p class="text">Ir al sitio</p>
-                      </button>
-                    </a>
-              </div>
-              </div>
             </div>
-        </div>
-        
+        </section>
 
-    </section>
-
-    <div class="loader-container">
-        <div class="loader">
-          <div class="glitch">
-            <span data-glitch="SKILLS">SKILLS</span>
-          </div>
-        </div>
-      </div>
-      <BR>
-    <div class="container">
-        <div class="skill-box">
-            <span class="title">Html</span>
-<br><br>
-            <div class="skill-bar">
-                <span class="skill-per html">
-                    <span class="tooltip">80%</span>
-                </span>
+        <section class="section projects-section" id="proyectos">
+            <div class="container">
+                <div class="section-heading section-heading-row">
+                    <div><p class="eyebrow">02 / Proyectos seleccionados</p><h2>Trabajo que puedes explorar.</h2></div>
+                    <a class="text-link" href="https://github.com/JonnySC?tab=repositories" target="_blank" rel="noopener noreferrer">Ver todos <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card project-featured">
+                        <div class="project-number">01</div>
+                        <div class="project-content"><p class="project-type">Producto personal · En desarrollo</p><h3>Tu mapa financiero</h3><p>Una aplicación para entender cómo se mueve tu dinero, registrar actividad y visualizar patrimonio, inversión y deuda.</p><div class="tags"><span>TypeScript</span></div></div>
+                        <div class="project-actions"><a class="project-link" href="https://mapa-financiero-local.pages.dev/" target="_blank" rel="noopener noreferrer">Ver demo ↗</a><span class="project-link project-link-muted">Repositorio privado</span></div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-number">02</div>
+                        <div class="project-content"><p class="project-type">Sitio web estatico · Desarrollo</p><h3>Portafolio personal</h3><p>Un espacio para presentar proyectos, habilidades y la forma en que trabajo.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
+                        <div class="project-actions"><a class="project-link" href="https://github.com/JonnySC/Portfolio" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio del portafolio">Repo ↗</a><a class="project-link project-link-muted" href="https://jonnysc.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Demo ↗</a></div>
+                    </article>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="skill-box">
-            <span class="title">Css</span>
-<br><br>
-            <div class="skill-bar">
-                <span class="skill-per css">
-                    <span class="tooltip">70%</span>
-                </span>
+        <section class="section skills-section container" id="experiencia">
+            <div class="section-heading"><p class="eyebrow">03 / Experiencia y especialización</p><h2>Soluciones pensadas para el mundo real.</h2></div>
+            <div class="skills-list">
+                <div class="skill-row"><span>01</span><strong>Compuevolución</strong><p>Consultor IT · Digital & App Innovation · 2024 — presente</p></div>
+                <div class="skill-row"><span>02</span><strong>IA empresarial</strong><p>Agentes de IA · LLMs · RAG · automatización · Azure AI</p></div>
+                <div class="skill-row"><span>03</span><strong>Investigación</strong><p>AI Engineer Trainee · CIC IPN · 2021 — 2022</p></div>
             </div>
-        </div>
-        <div class="skill-box">
-            <span class="title">JavaScript</span>
-<br><br>
-            <div class="skill-bar">
-                <span class="skill-per javascript">
-                    <span class="tooltip">40%</span>
-                </span>
+        </section>
+
+        <section class="section container" id="habilidades">
+            <div class="section-heading"><p class="eyebrow">04 / Stack y certificaciones</p><h2>Herramientas para diseñar, construir y entregar.</h2></div>
+            <div class="about-grid compact-grid">
+                <div class="about-copy"><p><strong>Cloud & AI</strong><br>Microsoft Azure · Azure AI · Azure OpenAI · LLMs · RAG · agentes de IA</p><p><strong>Datos y colaboración</strong><br>Microsoft Power BI · SharePoint · SharePoint Framework (SPFx)</p></div>
+                <div class="about-copy"><p><strong>Certificaciones</strong><br>AZ-900 Microsoft Azure Fundamentals<br>Microsoft Certified: AI Agent Builder Associate<br>Azure OpenAI · Participant</p><p><strong>Formación</strong><br>Maestría en Ciencias de la Computación · IPN<br>Ingeniería en Tecnologías de la Información</p></div>
             </div>
-        </div>
-        <div class="skill-box">
-            <span class="title">React</span>
-<br><br>
-            <div class="skill-bar">
-                <span class="skill-per react">
-                    <span class="tooltip">30%</span>
-                </span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <span class="title">C#</span>
-<br><br>
-            <div class="skill-bar">
-                <span class="skill-per c">
-                    <span class="tooltip">30%</span>
-                </span>
-            </div>
-        </div>
+        </section>
 
-        <div class="skill-box">
-            <span class="title">Asp.net core</span>
-<br><br>
-            <div class="skill-bar">
-                <span class="skill-per asp">
-                    <span class="tooltip">30%</span>
-                </span>
-            </div>
-        </div>
-<br><br><br><br><br><br>
-        <div class="skill-box">
-            <span class="title">@elingenierotrip</span>
+        <section class="contact-section container" id="contacto">
+            <p class="eyebrow">05 / Contacto</p>
+            <h2>Hagamos algo que valga la pena.</h2>
+            <div class="contact-actions"><a class="contact-link" href="https://mx.linkedin.com/in/jonathan-salas-c" target="_blank" rel="noopener noreferrer">Conectar en LinkedIn <span aria-hidden="true">↗</span></a><a class="contact-link" href="mailto:jonathansalascervantes.af@gmail.com">Enviar correo <span aria-hidden="true">↗</span></a></div>
+        </section>
+    </main>
 
-        </div>
-    </div>
-
-
-    
-
+    <footer class="site-footer container"><span>Jonathan Salas</span><span>AI & Cloud Engineer · 2026</span><a href="#inicio">Volver arriba ↑</a></footer>
     <script src="script.js"></script>
 </body>
-<footer>fghjfdjdfhynjd</footer>
 </html>
